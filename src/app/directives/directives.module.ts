@@ -4,6 +4,10 @@ import { SetBackgroundDirective } from './setBackground.directive';
 import { SetHighlightDirective } from './highlight.directive';
 import { ManipulateDirective } from './manipulate.directive';
 import { CommonModule } from '@angular/common';
+import { MyDirective } from './directive.directive';
+import { ADirective } from './adirective.directive';
+import { BDirective } from './bdirective.directive';
+import { ActionDirective } from './action.directive';
 
 @NgModule({
   imports: [
@@ -11,13 +15,22 @@ import { CommonModule } from '@angular/common';
     IfDirective,
     SetBackgroundDirective,
     SetHighlightDirective,
-    ManipulateDirective
+    ManipulateDirective,
+    MyDirective,
+    ADirective,
+    BDirective
   ],
   exports: [
     IfDirective,
     SetBackgroundDirective,
     SetHighlightDirective,
-    ManipulateDirective
+    ManipulateDirective,
+    MyDirective,
+    ADirective,
+    BDirective
+  ],
+  declarations: [
+    ActionDirective
   ]
 })
 export class DirectivesModule { }

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, Renderer2 } from '@angular/core';
 
 // HostBinding, HostListener Decorator
 // https://www.youtube.com/watch?v=blErqI-o1TM
@@ -20,6 +20,11 @@ export class SetHighlightDirective {
     // console.log('elementRef: ', this.element.nativeElement);
     // console.log('renderer: ', this.renderer);
   }
+
+  // Input이 있어야 * 을 붙일 수 있나보네
+  // @Input() set setHighlight(param: string){
+  //   console.log("setHightLight param: ", param);
+  // }
 
   @HostBinding('style.backgroundColor') background: string = 'pink';
 

@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
+    <app-parent></app-parent>
+
     <fieldset>
       <legend><h1>Custom Structural Directive</h1></legend>
      
@@ -18,6 +21,10 @@ import { Component } from '@angular/core';
       <h4>[3] Cusom Directive</h4>
       <p *appIf="true">3. appIf TRUE</p>
       <p *appIf="false">3. appIf FALSE</p>
+      <br>
+      <input id="showInput" [(ngModel)]="showInput" type="checkbox">
+      <label for="showInput">Show conditional header</label>
+      <h4 *appIf="showInput">보여라 얍!</h4>
     </fieldset>
 
     <fieldset>
@@ -40,5 +47,9 @@ import { Component } from '@angular/core';
   `
 })
 export class AppComponent {
+  showInput: boolean = false;
 
+  ngDoCheck(){
+    console.log("CD실행됨");
+  }
 }
